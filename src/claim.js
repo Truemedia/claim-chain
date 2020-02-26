@@ -1,8 +1,27 @@
 class Claim
 {
-    constructor()
+    constructor(photos = [], weight = null)
     {
-        console.log('claim init')
+       this.photos = photos
+       this.weight = weight
+    }
+
+    get scores()
+    {
+        let {aScore, iScore} = this
+        return {aScore, iScore}
+    }
+
+    // Authenticity
+    get aScore()
+    {
+        return this.photos.length
+    }
+
+    // Integrity
+    get iScore()
+    {
+        return this.weight > 0 ? 1 : 0
     }
 }
 

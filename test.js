@@ -5,5 +5,7 @@ const Wallet = require('./src/wallet')
 
 let chain = new Chain
 let block = new Block
-let claim = new Claim
+let claim = new Claim(['cam.jpg'], null)
 let wallet = new Wallet
+
+console.log('scores', claim.scores)
